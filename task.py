@@ -9,8 +9,10 @@ file=open("words.txt","r")
 words=file.read().splitlines()
 target=random.choice(words)
 tries=6
+guesses=[]
+
 while tries>0:
-    word=input("").lower()
+    word=input("enter your guess ").lower()
     if word=="give up":
         print(target)
     elif len(word)!=5:
@@ -30,7 +32,14 @@ while tries>0:
                 colored_result+=YELLOW+word[i]+RESET
             else:
                 colored_result+=GRAY+word[i]+RESET
-        print("             ",colored_result)
+        guesses.append(colored_result)
+        for i in guesses:
+            print(i)
+
+        for j in range(tries):
+            print("_"*5)
+
+        
            
 print("you lost")
 print("word is ",target)

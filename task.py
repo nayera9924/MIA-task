@@ -11,7 +11,9 @@ target=random.choice(words)
 tries=6
 while tries>0:
     word=input("").lower()
-    if len(word)!=5:
+    if word=="give up":
+        print(target)
+    elif len(word)!=5:
         print("word should contain 5 letters only")
     elif word not in words:
             print("not real word")
